@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/screens/cross_fade_animation.dart';
 import '../screens/size_animation.dart';
 
 class HomePage extends StatefulWidget {
@@ -57,14 +58,39 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const Spacer(),
-            TextButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, SizeAnimation.routeName),
-              child: const Text(
-                'Next',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton.icon(
+                    onPressed: () => Navigator.pushNamed(
+                        context, CrossFadeAnimation.routeName),
+                    icon: const Icon(Icons.open_in_new),
+                    label: const Text(
+                      'New Page',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  TextButton(
+                    onPressed: () =>
+                        Navigator.pushNamed(context, SizeAnimation.routeName),
+                    child: Row(
+                      children: const [
+                        Text(
+                          'Next',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward_rounded)
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

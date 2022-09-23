@@ -61,11 +61,17 @@ class _SizeAnimationState extends State<SizeAnimation> {
             TextButton(
               onPressed: () =>
                   Navigator.pushNamed(context, AlignAnimation.routeName),
-              child: const Text(
-                'Next',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    'Next',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  Icon(Icons.arrow_forward_rounded)
+                ],
               ),
             ),
           ],

@@ -3,7 +3,7 @@ import '../screens/positioned_screen.dart';
 
 class AlignAnimation extends StatefulWidget {
   const AlignAnimation({Key? key}) : super(key: key);
-  static const routeName= '/align-animation';
+  static const routeName = '/align-animation';
 
   @override
   State<AlignAnimation> createState() => _AlignAnimationState();
@@ -20,7 +20,9 @@ class _AlignAnimationState extends State<AlignAnimation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Animated Align'),),
+      appBar: AppBar(
+        title: Text('Animated Align'),
+      ),
       body: Column(
         children: [
           GestureDetector(
@@ -31,7 +33,8 @@ class _AlignAnimationState extends State<AlignAnimation> {
                 height: 440.0,
                 color: Colors.black54,
                 child: AnimatedAlign(
-                  alignment: _aligned ? Alignment.topCenter : Alignment.bottomCenter,
+                  alignment:
+                      _aligned ? Alignment.topCenter : Alignment.bottomCenter,
                   duration: const Duration(seconds: 1),
                   curve: Curves.fastOutSlowIn,
                   child: SizedBox(
@@ -48,11 +51,17 @@ class _AlignAnimationState extends State<AlignAnimation> {
           TextButton(
             onPressed: () =>
                 Navigator.pushNamed(context, PositionedScreen.routeName),
-            child: const Text(
-              'Next',
-              style: TextStyle(
-                fontSize: 20,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+                Icon(Icons.arrow_forward_rounded)
+              ],
             ),
           ),
         ],
